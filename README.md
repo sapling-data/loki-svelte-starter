@@ -1,6 +1,6 @@
-# Loki Vue 3 + Vite Starter
+# Loki Svelte + Vite Starter
 
-Loki Vue 3 + Vite Starter is a simple way to fast-forward through the setup of a fresh Vue 3 app that can be easily deployed to Sapling Data's Loki cloud OS. This app has been initialized with [Vite](https://vitejs.dev/) and includes basic setups for [Jest](https://jestjs.io/docs/en/getting-started) and [Tailwind CSS](https://tailwindcss.com/docs).
+Loki Svelte + Vite Starter is a simple way to fast-forward through the setup of a fresh Svelte app that can be easily deployed to Sapling Data's Loki cloud OS. This app has been initialized with [Vite](https://vitejs.dev/) and includes a basic setup for [Tailwind CSS](https://tailwindcss.com/docs).
 
 ## Quick Start
 Here's how to get code into a Loki cloud ASAP:
@@ -44,12 +44,6 @@ npm run dev
 npm run build
 ```
 
-### Run your unit tests
-An example test is included by default to ensure that Jest is functional/properly installed. You are responsible for writing the rest of the tests for your application.
-```node
-npm run test:unit
-```
-If you would like to add E2E tests, it is recommended that you add a <code>test:e2e</code> script command that will run with a <code>jest.e2e.config.js</code> file. Since component tests are common in Vue development, the <code>test:unit</code> command is included by default.
 ### Lints and fixes files
 Linting is currently working in VS Code. Your file will be linted and fixed on save. See the [ESLint docs](https://eslint.org/) to learn how to configure lint for your particular needs.
 
@@ -77,7 +71,7 @@ export default {
   internal: true,
 };
 ```
-Please make sure you update this information correctly, since it will be used to construct the API endpoints for deploying your code. It is recommended to set up a page in Loki's App Builder (along with an appropriate security model) for your Vue app to deploy to **before** configuring your Vue app.
+Please make sure you update this information correctly, since it will be used to construct the API endpoints for deploying your code. It is recommended to set up a page in Loki's App Builder (along with an appropriate security model) for your Svelte app to deploy to **before** configuring your Svelte app.
 
 #### Environment variables
 Deploying to Loki requires providing access to valid Loki credentials via environment variables. Add a [.env file to your project root and use dotenv](https://github.com/motdotla/dotenv#readme) to accomplish this. Use `LOKI_USERNAME`, `LOKI_PASSWORD`, `VITE_LOKI_USERNAME`, and `VITE_LOKI_PASSWORD` as your variable names.
