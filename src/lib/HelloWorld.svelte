@@ -18,7 +18,7 @@
   });
 
   message.subscribe(value => {
-    messageValue = value;
+    messageValue = value ? value : 'Hello, world!';
   })
 </script>
 
@@ -31,7 +31,7 @@
             name="message"
             class="w-80 mx-auto border p-2 shadow-sm focus:ring-indigo-500
             focus:border-indigo-500 block sm:text-sm border-gray-300 rounded-md"
-            placeholder="Type and press enter to update message" />
+            placeholder="Type to update message" />
   </div>
   <div>
     <button class="inline-flex items-center px-2.5 py-1.5 border
