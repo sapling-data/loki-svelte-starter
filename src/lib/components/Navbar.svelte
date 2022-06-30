@@ -16,22 +16,13 @@ import { Icon } from '@steeze-ui/svelte-icon';
 import { X } from '@steeze-ui/heroicons'
 import { Menu as MenuIcon } from '@steeze-ui/heroicons'
 import { Cog } from '@steeze-ui/heroicons'
+export let navigation = [];
+export let basepath = '';
 
-
-const navigation = [
-  {
-    name: 'Hello World',
-    to: '/',
-  },
-  {
-    name: 'Docs',
-    to: '/docs',
-  }
-]
-
-let url = '';
-
-onMount(() => url = window.location.href);
+const logout = async () => {
+  await loki.user.logout();
+  document.location.reload();
+};
 </script>
 
 <Disclosure as="nav" class="bg-gray-800" let:open>
@@ -58,7 +49,7 @@ onMount(() => url = window.location.href);
               <Router>
                 {#each navigation as item}
                   <Link
-                          to="{item.to}"
+                          to={basepath + item.to}
                           class="text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
                     {item.name}
@@ -88,7 +79,7 @@ onMount(() => url = window.location.href);
               rounded-md shadow-lg py-1 bg-white ring-1 ring-black
               ring-opacity-5 focus:outline-none">
                 <MenuItem>
-                  <button class="block px-4 py-2 text-sm text-gray-700 w-full text-left">Log out</button>
+                  <button class="block px-4 py-2 text-sm text-gray-700 w-full text-left" on:click={logout}>Log out</button>
                 </MenuItem>
               </MenuItems>
             </Transition>
@@ -101,7 +92,7 @@ onMount(() => url = window.location.href);
       <div class="px-2 pt-2 pb-3 space-y-1">
         {#each navigation as item}
           <Link
-              to={item.to}
+              to={basepath + item.to}
               class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
           >
             {item.name}
