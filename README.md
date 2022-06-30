@@ -8,8 +8,8 @@ Here's how to get code into a Loki cloud ASAP:
 - Create a new repo using the loki-vite-starter template
 - Clone your new repo and run `npm install`
 - Fill out the information in `loki.config.mjs`
-- Create a `.env` file in your project root with the [appropriate credentials](https://github.com/sapling-data/loki-vite-starter#environment-variables) for the environment you'll be deploying to.
-- If you want to use GitHub Actions to deploy your code automatically, [add your credentials to your Repository Secrets](https://github.com/sapling-data/loki-vite-starter#adding-your-credentials-as-repository-secrets)
+- Create a `.env` file in your project root with the [appropriate credentials](https://github.com/sapling-data/loki-sveltee-starter#environment-variables) for the environment you'll be deploying to.
+- If you want to use GitHub Actions to deploy your code automatically, [add your credentials to your Repository Secrets](https://github.com/sapling-data/loki-svelte-starter#adding-your-credentials-as-repository-secrets)
 - Run `npm run dev` to make sure your app runs on a dev server.
 - Make any changes you want.
 - Run `npm run loki` to build and deploy your app.
@@ -52,7 +52,7 @@ The production build of your application, located in the <code>dist</code> d
 ```js
 export default {
   // The string that you want to inject into the title tag of your page
-  pageTitle: 'Loki Vite Starter',
+  pageTitle: 'Loki Svelte Starter',
   // The Loki app that you plan to deploy to; this may need to change in production depending on your package configuration in Loki.
   appName: process.env.NODE_ENV === 'development' ? 'examples-pg' : 'examples',
   // The app model you are developing for
@@ -60,7 +60,7 @@ export default {
   // The app builder associated with your app model
   appBuilderName: 'examples-modeler',
   // The page in Loki's App Builder that you plan to deploy to
-  pageName: 'helloWorld',
+  pageName: 'helloWorldSvelte',
   // The subdomain of your cloud's url
   cloudPrefix: 'dev',
   // The name of your cloud environment
